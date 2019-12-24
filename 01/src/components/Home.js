@@ -1,5 +1,6 @@
 import React, { Component, Suspense, lazy } from 'react'
 
+import CreateRef from './CreateRef'
 const About = lazy(() => import('./About'));
 
 
@@ -20,7 +21,7 @@ export default class Home extends Component {
         if ( show ) {
             return (
                 <Suspense fallback={<div>Loading</div>}>
-                    <About />
+                    <About name={'tagegge'}/>
                 </Suspense>
             )
         }
@@ -32,6 +33,7 @@ export default class Home extends Component {
             <div>
                 <button onClick={this.loadClick}>点击</button>
                 {this.loadAbout()}
+                <CreateRef />
             </div>
         )
     }
